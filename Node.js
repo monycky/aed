@@ -5,26 +5,26 @@ class Node {
         this.value = value;
         this.rightChild = rightChild;
         this.leftChild = leftChild;
-
-        find(key) {
-            if (this.key == key) {
-                console.log('EXISTE');
-                return this;
-            } else {
-                if (key > this.key) {
-                    if (this.hasLeftChild()) {
-                        return null
-                    } else {
-                        this.rightChild.find(key)
-                    }
+    }
+    find(key) {
+        if (this.key == key) {
+            console.log('EXISTE');
+            return this;
+        } else {
+            if (key > this.key) {
+                if (this.hasLeftChild()) {
+                    return null
                 } else {
-                    if (this.hasRightChild()) {
-                        return null
-                    } else {
-                        this.leftChild.find(key)
-                    }
+                    this.rightChild.find(key)
+                }
+            } else {
+                if (this.hasRightChild()) {
+                    return null
+                } else {
+                    this.leftChild.find(key)
                 }
             }
         }
     }
+
 }
