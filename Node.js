@@ -96,6 +96,17 @@ class Node {
         }
     }
 
-}
+    preOrder() {
+        console.log(this.key);
+        if (this.leftChild !== null) {
+            this.leftChild.preOrder();
+        }
+        if (this.rightChild !== null) {
+            this.rightChild.preOrder();
+        }
+    } 
+
 
 }
+
+
