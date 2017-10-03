@@ -28,19 +28,62 @@ class Node {
     }
 
     add(node) {
-        if(node.key > this.key) {
-         if(!this.rightChild) {
-             this.rightChild = node;
-         } else {
-             this.rightChild.add(node);
-         }
-       } else {
-         if(!this.leftChild) {
-             this.leftChild = node;
-         } else {
-             this.leftChild.add(node);
-         }		
-       }
-   }
+        if (node.key > this.key) {
+            if (!this.rightChild) {
+                this.rightChild = node;
+            } else {
+                this.rightChild.add(node);
+            }
+        } else {
+            if (!this.leftChild) {
+                this.leftChild = node;
+            } else {
+                this.leftChild.add(node);
+            }
+        }
+    }
+
+
+    remove(key) {
+        let foundIt = this.find(key);
+        if (foundIt != null) {
+            if (foundIt.isLeaf()) {
+                if (foundIt.isLeftChild()) {
+                    fouindIt.parent.leftChild = null;
+                } else {
+                    foundIt.parent.rightChiuld = null;
+                }
+
+                foundIt.parent = null;
+
+            } else if (foundIt.hasBothChildren()) {
+
+            } else {
+                if (foundId.isLeaftChild()) {
+                    if (foundIt.hasLeftChild()) {
+                        foundIt.parent.leftChild = foundIt.leftChild;
+                        foundIt.leftChild.parent = foundIt.parent;
+                        found.leftChild = null;
+                    } else {
+                        foundIt.parent.leftChild = foundIt.rightChild;
+                        foundIt.rightChild.parent = foundIt.parent;
+                        found.rightChild = null;
+                    }
+                    foundIt.parent = null;
+                } else {
+                    if (foundIt.hasLeftChild()) {
+                        foundIt.parent.rightChild = foundIt.leftChild;
+                        foundIt.leftChild.parent = foundIt.parent;
+                        foundIt.leftChild = null;
+                    } else {
+                        foundIt.parent.rightChild = foundIt.leftChild;
+                        foundIt.rightChild.parent = foundIt.parent;
+                    }
+
+                    foundIt.parent = null;
+                }
+            }
+        }
+    }
 
 }
