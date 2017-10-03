@@ -105,7 +105,18 @@ class Node {
             this.rightChild.preOrder();
         }
     } 
+    
+    posOrder() {
+        if (this.leftChild !== null) {
+            this.leftChild.posOrder();
+        }
+        if (this.rightChild !== null) {
+            this.rightChild.posOrder();
+        }
+        console.log(this.key);
+    }
 
+    
 
 }
 
