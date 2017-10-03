@@ -27,4 +27,20 @@ class Node {
         }
     }
 
+    add(node) {
+        if(node.key > this.key) {
+         if(!this.rightChild) {
+             this.rightChild = node;
+         } else {
+             this.rightChild.add(node);
+         }
+       } else {
+         if(!this.leftChild) {
+             this.leftChild = node;
+         } else {
+             this.leftChild.add(node);
+         }		
+       }
+   }
+
 }
