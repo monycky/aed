@@ -86,4 +86,16 @@ class Node {
         }
     }
 
+    inOrder() {
+        if (this.hasLeftChild()) {
+            this.leftChild.inOrder();
+        }
+        console.log(this.key);
+        if (this.hasRightChild) {
+            this.rightChild.inOrder();
+        }
+    }
+
+}
+
 }
