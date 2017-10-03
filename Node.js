@@ -124,6 +124,9 @@ class Node {
         return this.rightChild !== null;
     }
     
+    hasBothChildren() {
+        return (this.leftChild !== null && this.rightChild !== null);
+    }
 
 }
 
