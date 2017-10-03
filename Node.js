@@ -105,7 +105,7 @@ class Node {
             this.rightChild.preOrder();
         }
     } 
-    
+
     posOrder() {
         if (this.leftChild !== null) {
             this.leftChild.posOrder();
@@ -116,6 +116,13 @@ class Node {
         console.log(this.key);
     }
 
+    hasLeftChild() {
+        return this.leftChild !== null;
+    }
+
+    hasRightChild() {
+        return this.rightChild !== null;
+    }
     
 
 }
