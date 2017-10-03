@@ -128,6 +128,9 @@ class Node {
         return (this.leftChild !== null && this.rightChild !== null);
     }
 
+    isLeaf() {
+        return (this.leftChild == null && this.rightChild == null);
+    }
 }
 
 
