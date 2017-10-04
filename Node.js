@@ -131,6 +131,16 @@ class Node {
     isLeaf() {
         return (this.leftChild == null && this.rightChild == null);
     }
+
+    isLeftChild() {
+        return (this.parent !== null && this.parent.leftChild !== null);
+    }
+
+    isRightChild() {
+        return (this.parent !== null && this.parent.rightChild !== null);
+    }
+
 }
+
 
 
