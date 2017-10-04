@@ -156,6 +156,19 @@ class Node {
         return max;
     }
 
+    size() {
+        //start with 1 
+        let total = 1;
+
+        if (this.leftChild !== null) {
+            total = total + this.leftChild.size();
+        }
+        if (this.rightChild !== null) {
+            total = total + this.rightChild.size();
+        }
+        return total;
+    }
+
 }
 
 
