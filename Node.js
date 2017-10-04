@@ -169,6 +169,20 @@ class Node {
         return total;
     }
 
+    sum() {
+        let soma = this.key;
+
+        if (this.leftChild !== null) {
+            soma = soma + this.leftChild.sum();
+           
+        }
+        if (this.rightChild !== null) {
+            soma = soma + this.rightChild.sum();
+        }
+
+
+        return soma;
+    }
 }
 
 
