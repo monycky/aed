@@ -140,6 +140,14 @@ class Node {
         return (this.parent !== null && this.parent.rightChild !== null);
     }
 
+    minimum() {
+        let min = this;
+        while (min.hasLeftChild()) {
+            min = min.leftChild;
+        }
+        return min;
+    }
+
 }
 
 
