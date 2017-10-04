@@ -148,6 +148,14 @@ class Node {
         return min;
     }
 
+    maximum() {
+        let max = this;
+        while (max.hasRightChild()) {
+            max = max.rightChild;
+        }
+        return max;
+    }
+
 }
 
 
