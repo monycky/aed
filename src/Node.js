@@ -179,8 +179,6 @@ class Node {
         if (this.rightChild !== null) {
             soma = soma + this.rightChild.sum();
         }
-
-
         return soma;
     }
 }
